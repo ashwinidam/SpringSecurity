@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service("service")
-
+// This is my login service
 public class LoginService implements ServiceMethod{
 
 	@Autowired 
