@@ -20,7 +20,12 @@ method="post" modelAttribute="logbn">
 			FullName : <form:input path="fullName" value="${logbn.fullName }"/><br><br>
 			
 			<input type="submit" value="submit">
+			
+			
+			<a href="/SpringSecurity/login/home/gita/gitu">Login Home</a>
+			
 </form:form>
+
 ${logbn}
 </body>
 </html>
