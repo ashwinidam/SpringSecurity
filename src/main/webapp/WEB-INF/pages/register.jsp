@@ -22,7 +22,7 @@ method="post" modelAttribute="logbn">
 			<input type="submit" value="submit">
 			
 			
-			<a href="/SpringSecurity/login/home/divya/diva">Login Home</a>
+			<a href="/SpringSecurity/login/home/sai/sai">Login Home</a>
 			
 </form:form>
 
