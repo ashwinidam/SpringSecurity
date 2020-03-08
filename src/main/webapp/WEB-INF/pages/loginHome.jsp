@@ -10,7 +10,15 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+
+
 <body>
+<table>
+<tr><th>UserName</th><th>Password</th></tr>
+<td>${logbn.userName}</td>
+ <td>${logbn.password}</td>
+</table>
+<H1>Welcome ${logbn.fullName}
 
 ${logbn}
 </body>
