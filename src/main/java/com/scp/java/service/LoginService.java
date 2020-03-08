@@ -29,6 +29,7 @@ public class LoginService implements ServiceMethod{
 		LoginEn log=new LoginEn();
 		log.setFullName(login.getFullName());
 		log.setContactNo(login.getContactNo());
+		log.setEmailId(login.getEmailId());
 		LoginKey lk=new LoginKey();
 		lk.setPassword(login.getPassword());
 		lk.setUsername(login.getUserName());

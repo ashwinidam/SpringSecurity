@@ -10,15 +10,18 @@ import javax.persistence.Table;
 public class LoginEn {
 		@EmbeddedId
 		public LoginKey logKey;
+		public String emailId;
 		public int contactNo;
 		public String fullName;
 		public LoginEn() {
 			super();
 			// TODO Auto-generated constructor stub
 		}
-		public LoginEn(LoginKey logKey, int contactNo, String fullName) {
+		
+		public LoginEn(LoginKey logKey, String emailId, int contactNo, String fullName) {
 			super();
 			this.logKey = logKey;
+			this.emailId = emailId;
 			this.contactNo = contactNo;
 			this.fullName = fullName;
 		}
@@ -43,6 +46,14 @@ public class LoginEn {
 		}
 		public void setFullName(String fullName) {
 			this.fullName = fullName;
+		}
+
+		public String getEmailId() {
+			return emailId;
+		}
+
+		public void setEmailId(String emailId) {
+			this.emailId = emailId;
 		}
 		
 
