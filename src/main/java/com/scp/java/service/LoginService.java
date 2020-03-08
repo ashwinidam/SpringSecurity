@@ -36,9 +36,17 @@ public class LoginService implements ServiceMethod{
 		lk.setPassword(login.getPassword());
 		lk.setUsername(login.getUserName());
 		log.setLogKey(lk);
+		System.out.println("In addUser before dao");
+		try
+		{
 		logindao.daoAddUser(log);
-		
-		return 0;
+		return 1;
+		}
+		catch(Exception e)
+		{
+			System.out.println("Registration failed");
+			return -1;
+		}
 	}
 
 	public Registration getUser(String userName, String password) {
