@@ -22,9 +22,9 @@ public class SpringHibernateConfig {
 	@Bean("ds")
 	public BasicDataSource basicDataSource() {
 		BasicDataSource ds = new BasicDataSource();
-		ds.setUrl("jdbc:mysql://localhost:3306/jvdb");
+		ds.setUrl("jdbc:mysql://localhost:3306/jvdb1");
 		ds.setUsername("root");
-		ds.setPassword("root");
+		ds.setPassword("");
 		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		return ds;
 	}

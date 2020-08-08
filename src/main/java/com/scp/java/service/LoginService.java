@@ -6,6 +6,10 @@ import com.scp.java.entities.LoginKey;
 import com.scp.java.beans.Registration;
 import com.scp.java.dao.DaoLayer;
 import com.scp.java.servicemethods.ServiceMethod;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -70,6 +74,17 @@ public class LoginService implements ServiceMethod{
 		registerbean.setPassword(lk.getPassword());
 		return registerbean;
 	}
+	
+	public List<RegistrationEn> getAllUser() {
+		List<RegistrationEn> entities =  logindao.daoGetAllUser();
+		//List<RegistrationEn> allusers = new ArrayList<RegistrationEn>();
+		
+		for(RegistrationEn empen  : entities) {
+			System.out.println("user"+empen);
+		}
+		return entities;
+	}
+
 
 	public int changePassword(String userName, String oldPassword, String newpassword) {
 		

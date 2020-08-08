@@ -20,10 +20,11 @@ public class LoginMainDemo {
 	 System.out.println(service.getLogindao().hashCode() +">> DAOImpl");
 	 System.out.println(service.getLogindao().getSfactory().hashCode());
 	//LoginKey logk=new LoginKey("Ashwini","ashwini");
-	 //Registration login=new Registration("gita", "gitu", "asss@sss.com", 66666, "Gita Sunil");
-	// service.addUser(login);
+	// Registration login=new Registration("gita", "gitu", "asss@sss.com", 66666, "Gita Sunil");
+	//service.addUser(login);
 	//System.out.println("Added successfully");
-	 Registration re=service.getUser("gita", "gitu");
-	 System.out.println(re);
+	// Registration re=service.getUser("gita", "gitu");
+	 //System.out.println(service.getAllUser());
+	 //System.out.println(re);
 }
 }

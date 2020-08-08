@@ -1,5 +1,7 @@
 package com.scp.java.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -88,6 +90,27 @@ public class DaoLayer implements DaoMethods{
 	public int daoDeleteUser(String userName, String password) {
 		
 		return 0;
+	}
+
+	public List<RegistrationEn> daoGetAllUser() {
+		Session session=null;
+		try
+		{
+			System.out.println("in try");
+			session=sfactory.openSession();
+			Transaction tr=null;
+			System.out.println("After transaction");
+			return session.createCriteria(RegistrationEn.class).list();
+		}
+		catch(Exception e)
+		{
+			return null;
+		}
+		finally
+		{
+			session.close();
+			
+		}
 	}
 
 }

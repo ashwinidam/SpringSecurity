@@ -58,12 +58,14 @@ public class LoginController {
 	public ModelAndView addUser(@ModelAttribute("logbn") Registration bean) {
 		System.out.println(bean);
 		HashMap<String, Object> model = new HashMap<String, Object>();
-		model.put("logbn",new Registration());
+		
 	
 		service.addUser(bean);
+		
 		String msg="added ssuccessfully";
-		model.put("logbn",msg);
-		return new ModelAndView("logbn",model);
+		model.put("allUserBn", service.getAllUser());
+		//model.put("logbn",msg);
+		return new ModelAndView("register",model);
 	}
 
 }

@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form action="http://localhost:8082/SpringSecurity/login/save"
+<form:form action="/SpringSecurity/login/save"
 method="post" modelAttribute="logbn"> 
 			UserName : <form:input path="userName" value="${logbn.userName }"/> <br><br>
 			Password : <form:input type="password" path="password" value="${logbn.password }"/><br><br>
@@ -22,10 +22,33 @@ method="post" modelAttribute="logbn">
 			<input type="submit" value="submit">
 			
 			
-			<a href="/SpringSecurity/login/home/sai/sai">Login Home</a>
+			<a href="/SpringSecurity/login/home/gitu/gita">Login Home</a>
 			
 </form:form>
 
-${logbn}
+<! ${allUserBn}  >
+<table>
+		<tr>
+				<th>UserName</th>
+				<th>Email-Id</th>
+				<th>ContactNo</th>
+				<th>Full Name</th>
+			<th>Action</th>	
+		</tr>
+			
+			<c:forEach items="${allUserBn}" var="emp">
+					<tr>
+							<td><c:out value="${emp.logKey.username}"></c:out></td>
+							<td><c:out value="${emp.emailId}"></c:out></td>
+							<td><c:out value="${emp.contactNo}"></c:out></td>
+							<td><c:out value="${emp.fullName}"></c:out></td>
+							<td>
+								<a href="/SpringSecurity/login/update/${emp.logKey.username}">EDIT</a>
+								<a href="/SpringSecurity/login/delete/${emp.logKey.username}">DELETE</a>							
+							
+							</td>
+					</tr>
+			</c:forEach>
+</table>
 </body>
 </html>
