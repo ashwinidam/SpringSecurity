@@ -1,13 +1,16 @@
 package com.scp.java.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.scp.java.entities.LoginEn;
-import com.scp.java.beans.Login;
+import com.scp.java.entities.LoginKey;
+import com.scp.java.entities.RegistrationEn;
+import com.scp.java.beans.Registration;
 import com.scp.java.daomethods.DaoMethods;
 
 @Repository
@@ -26,7 +29,7 @@ public class DaoLayer implements DaoMethods{
 		this.sfactory = sfactory;
 	}
 
-	public int daoAddUser(LoginEn login) {
+	public int daoAddUser(RegistrationEn login) {
 		System.out.println(login);
 		Session session=null;
 		Transaction tr=null;
@@ -53,9 +56,30 @@ public class DaoLayer implements DaoMethods{
 		
 	}
 
-	public Login daoGetUser(String userName, String password) {
+	public RegistrationEn daoGetUser(LoginKey lk) {
 	
-		return null;
+		Session session=null;
+		try
+		{
+			System.out.println("in try");
+			session=sfactory.openSession();
+			
+			System.out.println("After transaction");
+			RegistrationEn reent=session.get(RegistrationEn.class, lk);
+			System.out.println("Employee login details fetched.."+reent);
+			return reent;
+		}
+		catch(Exception e)
+		{
+			return null;
+		}
+		finally
+		{
+			session.close();
+			
+		}
+		
+		
 	}
 
 	public int daoChangePassword(String userName, String oldPassword, String newpassword) {
@@ -66,6 +90,27 @@ public class DaoLayer implements DaoMethods{
 	public int daoDeleteUser(String userName, String password) {
 		
 		return 0;
+	}
+
+	public List<RegistrationEn> daoGetAllUser() {
+		Session session=null;
+		try
+		{
+			System.out.println("in try");
+			session=sfactory.openSession();
+			Transaction tr=null;
+			System.out.println("After transaction");
+			return session.createCriteria(RegistrationEn.class).list();
+		}
+		catch(Exception e)
+		{
+			return null;
+		}
+		finally
+		{
+			session.close();
+			
+		}
 	}
 
 }

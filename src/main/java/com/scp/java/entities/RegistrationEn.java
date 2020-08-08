@@ -1,29 +1,35 @@
 package com.scp.java.entities;
 
 import javax.persistence.EmbeddedId;
-
-public class LoginEn {
-
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+//Registartion running now
+@Entity
+@Table
+public class RegistrationEn {
 		@EmbeddedId
 		public LoginKey logKey;
-		public String emailId;
 		public int contactNo;
 		public String fullName;
-		public LoginEn() {
+		public String emailId;
+		public RegistrationEn() {
 			super();
 			// TODO Auto-generated constructor stub
 		}
 		
-		public LoginEn(LoginKey logKey, String emailId, int contactNo, String fullName) {
+		public RegistrationEn(LoginKey logKey, int contactNo, String fullName, String emailId) {
 			super();
 			this.logKey = logKey;
-			this.emailId = emailId;
 			this.contactNo = contactNo;
 			this.fullName = fullName;
+			this.emailId = emailId;
 		}
+
 		@Override
 		public String toString() {
-			return "LoginEn [logKey=" + logKey + ", contactNo=" + contactNo + ", fullName=" + fullName + "]";
+			return "RegistrationEn [logKey=" + logKey + ", contactNo=" + contactNo + ", fullName=" + fullName
+					+ ", emailId=" + emailId + "]";
 		}
 		public LoginKey getLogKey() {
 			return logKey;
@@ -51,28 +57,6 @@ public class LoginEn {
 		public void setEmailId(String emailId) {
 			this.emailId = emailId;
 		}
-	String userName;
-	String password;
-	public LoginEn(String userName, String password) {
-		super();
-		this.userName = userName;
-		this.password = password;
-	}
-	
-	
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	
-	
+		
+
 }
